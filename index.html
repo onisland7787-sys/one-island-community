@@ -646,6 +646,36 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
   }
 }
 
+
+/* V34：公設個別使用辦法 */
+.facility-card{cursor:pointer;position:relative;}
+.facility-card .facility-rule-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:12px;padding:10px 16px;border-radius:999px;
+  background:#2f8a73;color:#fff;font-size:15px;font-weight:800;
+  box-shadow:0 8px 18px rgba(47,138,115,.16);
+}
+.facility-rule-modal{
+  position:fixed;inset:0;background:rgba(18,45,48,.58);
+  z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;
+}
+.facility-rule-modal.open{display:flex;}
+.facility-rule-box{
+  width:min(720px,94vw);max-height:88vh;overflow:auto;background:#fff;
+  border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.22);
+}
+.facility-rule-box h3{font-size:25px;color:#174b55;margin:0 0 14px;}
+.facility-rule-box ul{font-size:16px;line-height:1.8;padding-left:22px;margin:0;}
+.facility-rule-close{
+  float:right;border:0;background:#e9f3f0;color:#225e5b;border-radius:999px;
+  width:38px;height:38px;font-size:20px;font-weight:800;cursor:pointer;
+}
+@media(max-width:820px){
+ .facility-rule-box{padding:20px;}
+ .facility-rule-box h3{font-size:21px;}
+ .facility-rule-box ul{font-size:15px;line-height:1.75;}
+}
+
 </style>
 </head>
 <body>
@@ -739,9 +769,9 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
   <section id="community" class="section active">
    <div class="section-head"><div><h2>社區介紹</h2><p>認識一嶼的公共空間。</p></div></div>
    <div class="facility-grid">
-    <article class="facility-card searchable" data-search="媽媽教室 公設 包場 點數 空調">
+    <article class="facility-card searchable" data-search="媽媽教室 公設 包場 點數 空調" onclick="openFacilityRule('媽媽教室')">
       <img src="facility_mom.jpg" alt="媽媽教室">
-      <div><h3>媽媽教室</h3><p>社區多功能活動空間。</p></div>
+      <div><h3>媽媽教室</h3><p>社區多功能活動空間。</p><div class="facility-rule-btn">查看使用辦法</div></div>
       <div class="facility-summary"><h4>使用重點</h4><ul>
         <li><b>開放時間：</b>09:00–22:00。</li>
         <li><b>一般使用：</b>20點／人／小時，空調費30元／人／小時；<br>每次最多2小時。</li>
@@ -908,4 +938,30 @@ document.getElementById('search').addEventListener('input',filterItems);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRule()});
 </script>
 <div class="berkeley-brand berkeley-fixed"><img src="berkeley_logo.jpg" alt="伯克錸物業管理"></div>
+
+<div id="facilityRuleModal" class="facility-rule-modal" onclick="if(event.target===this)closeFacilityRule()">
+  <div class="facility-rule-box">
+    <button class="facility-rule-close" onclick="closeFacilityRule()">×</button>
+    <h3 id="facilityRuleTitle"></h3>
+    <ul id="facilityRuleList"></ul>
+  </div>
+</div>
+
+<script>
+const FACILITY_RULES = {"媽媽教室": ["開放時間：09:00–22:00。", "開放使用：20 點／人／小時；冷氣費 30 元／人／小時。", "每次最多使用 2 小時；同戶最多 4 人，總人數最多 8 人，不得跨戶共同使用。", "包場須於 3 日前申請，且預約日期須在 30 日內；300 元／小時，保證金 2,000 元，最多 4 小時、8 人。", "廚房設備不開放使用；訪客須由住戶陪同。", "可攜帶食物，但禁止明火、吸菸、嚼食檳榔；使用後須自行清潔。"], "健身房": ["開放時間：06:00–24:00。", "使用點數：20 點／人／小時；每次 1 小時，可延長至最多 2 小時。", "同戶最多 2 人，總人數最多 5 人。", "12 歲以下須由成人陪同，且不得使用健身器材；未滿 16 歲禁止重量訓練。", "不提供包場；訪客須由住戶陪同。", "僅可飲用白開水，不得攜帶食物或其他飲料；寵物不得進入。"], "空中酒吧": ["開放時間：09:00–22:00。", "採包場使用；須於 3 日前申請，且預約日期須在 30 日內。", "費用 300 元／小時，保證金 2,000 元；最多 4 小時、8 人。", "遲到超過 10 分鐘視同放棄預約；各預約時段間保留 30 分鐘供檢查。", "訪客須由住戶陪同。", "可攜帶食物；禁止吸菸、嚼食檳榔及危險易燃物品；使用後須自行清潔。"], "交誼廳": ["24 小時開放。", "屬公共開放空間，免費使用，不提供預約或包場。", "訪客須由住戶陪同。", "22:00 後請降低音量，避免影響其他住戶。", "不得長時間占用、作為私人會議場所或製造噪音。", "寵物須繫繩或不得落地。"]};
+function openFacilityRule(name){
+  const modal=document.getElementById('facilityRuleModal');
+  document.getElementById('facilityRuleTitle').textContent=name+'｜使用辦法';
+  const ul=document.getElementById('facilityRuleList');
+  ul.innerHTML='';
+  (FACILITY_RULES[name]||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeFacilityRule(){
+  document.getElementById('facilityRuleModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+</script>
+
 </body></html>
