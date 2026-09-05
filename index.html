@@ -251,6 +251,87 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
   }
 }
 
+
+/* V27：管理辦法卡片左右各半 */
+.rule-card{
+  display:grid !important;
+  grid-template-columns:50% 50% !important;
+  min-height:220px !important;
+}
+.rule-card .secretary-mini{
+  width:100% !important;
+  height:220px !important;
+  min-height:220px !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  padding:8px !important;
+  box-sizing:border-box;
+  background:#eef5f2;
+}
+.rule-card .rule-copy{
+  width:auto !important;
+  padding:16px 18px !important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  box-sizing:border-box;
+}
+.rule-card .rule-copy h3{
+  font-size:16px !important;
+  line-height:1.35 !important;
+  margin:6px 0 !important;
+}
+.rule-card .rule-copy p{
+  font-size:12px !important;
+  line-height:1.45 !important;
+  margin:0 0 10px !important;
+}
+.rule-card .date{
+  font-size:9.5px !important;
+  padding:4px 7px !important;
+}
+.rule-card .btn{
+  padding:8px 13px !important;
+  font-size:12.5px !important;
+}
+@media(max-width:820px){
+  .rule-card{
+    grid-template-columns:50% 50% !important;
+    min-height:190px !important;
+  }
+  .rule-card .secretary-mini{
+    height:190px !important;
+    min-height:190px !important;
+    padding:6px !important;
+  }
+  .rule-card .rule-copy{
+    padding:12px 12px !important;
+  }
+  .rule-card .rule-copy h3{font-size:14px !important;}
+  .rule-card .rule-copy p{font-size:11.5px !important;}
+}
+
+
+/* V28：11張素底小秘書套用至各管理辦法卡片 */
+.rule-card{
+  grid-template-columns:50% 50% !important;
+}
+.rule-card .secretary-mini{
+  width:100% !important;
+  height:100% !important;
+  min-height:220px !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  padding:6px !important;
+  background:#f3f7f5 !important;
+}
+@media(max-width:820px){
+  .rule-card .secretary-mini{
+    min-height:190px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -285,59 +366,59 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
   <section id="rules" class="section">
    <div class="section-head"><div><h2>管理辦法</h2><p>點選「查看辦法」即可閱讀目前管理辦法原始 PDF。</p></div></div>
    <div class="rule-grid"><article class="rule-card searchable" data-search="公共設施使用管理辦法 公設使用、開放時間與注意事項">
-  <img class="secretary-mini" src="sec_facility.jpg" alt="一嶼小秘書">
+  <img class="secretary-mini" src="sec_facility_plain.jpg" alt="一嶼小秘書">
   <div class="rule-copy"><span class="date">制定／修訂 115.04.24</span><h3>公共設施使用管理辦法</h3><p>公設使用、開放時間與注意事項</p>
-  <button class="btn" onclick="openRule('rule_facility.pdf','公共設施使用管理辦法','sec_facility.jpg')">查看辦法</button></div>
+  <button class="btn" onclick="openRule('rule_facility.pdf','公共設施使用管理辦法','sec_facility_plain.jpg')">查看辦法</button></div>
 </article>
 <article class="rule-card searchable" data-search="仲介帶看管理辦法 仲介登記、預約帶看與進出規範">
-  <img class="secretary-mini" src="sec_doc.jpg" alt="一嶼小秘書">
+  <img class="secretary-mini" src="sec_broker_plain.jpg" alt="一嶼小秘書">
   <div class="rule-copy"><span class="date">制定／修訂 115.08.20</span><h3>仲介帶看管理辦法</h3><p>仲介登記、預約帶看與進出規範</p>
-  <button class="btn" onclick="openRule('rule_broker.pdf','仲介帶看管理辦法','sec_doc.jpg')">查看辦法</button></div>
+  <button class="btn" onclick="openRule('rule_broker.pdf','仲介帶看管理辦法','sec_broker_plain.jpg')">查看辦法</button></div>
 </article>
 <article class="rule-card searchable" data-search="地下室停車場管理辦法 車位使用、車輛進出及停車規範">
-  <img class="secretary-mini" src="sec_point.jpg" alt="一嶼小秘書">
+  <img class="secretary-mini" src="sec_parking_plain.jpg" alt="一嶼小秘書">
   <div class="rule-copy"><span class="date">制定／修訂 115.06.26</span><h3>地下室停車場管理辦法</h3><p>車位使用、車輛進出及停車規範</p>
-  <button class="btn" onclick="openRule('rule_parking.pdf','地下室停車場管理辦法','sec_point.jpg')">查看辦法</button></div>
+  <button class="btn" onclick="openRule('rule_parking.pdf','地下室停車場管理辦法','sec_parking_plain.jpg')">查看辦法</button></div>
 </article>
 <article class="rule-card searchable" data-search="門禁管理辦法 住戶、訪客及施工人員進出規範">
-  <img class="secretary-mini" src="sec_welcome.jpg" alt="一嶼小秘書">
+  <img class="secretary-mini" src="sec_access_plain.jpg" alt="一嶼小秘書">
   <div class="rule-copy"><span class="date">制定／修訂 115.06.25</span><h3>門禁管理辦法</h3><p>住戶、訪客及施工人員進出規範</p>
-  <button class="btn" onclick="openRule('rule_access.pdf','門禁管理辦法','sec_welcome.jpg')">查看辦法</button></div>
-</article>
-<article class="rule-card searchable" data-search="租售管理辦法 出租、承租及住戶資料規範">
-  <img class="secretary-mini" src="sec_doc.jpg" alt="一嶼小秘書">
-  <div class="rule-copy"><span class="date">制定／修訂 115.05.23</span><h3>租售管理辦法</h3><p>出租、承租及住戶資料規範</p>
-  <button class="btn" onclick="openRule('rule_rental.pdf','租售管理辦法','sec_doc.jpg')">查看辦法</button></div>
-</article>
-<article class="rule-card searchable" data-search="郵件包裹寄放管理辦法 郵件、包裹代收與領取規範">
-  <img class="secretary-mini" src="sec_move.jpg" alt="一嶼小秘書">
-  <div class="rule-copy"><span class="date">制定／修訂 115.04.24</span><h3>郵件包裹寄放管理辦法</h3><p>郵件、包裹代收與領取規範</p>
-  <button class="btn" onclick="openRule('rule_parcel.pdf','郵件包裹寄放管理辦法','sec_move.jpg')">查看辦法</button></div>
-</article>
-<article class="rule-card searchable" data-search="裝潢施工管理辦法 施工申請、保護、施工時間及驗退">
-  <img class="secretary-mini" src="sec_form.jpg" alt="一嶼小秘書">
-  <div class="rule-copy"><span class="date">制定／修訂 115.08.20</span><h3>裝潢施工管理辦法</h3><p>施工申請、保護、施工時間及驗退</p>
-  <button class="btn" onclick="openRule('rule_renovation.pdf','裝潢施工管理辦法','sec_form.jpg')">查看辦法</button></div>
-</article>
-<article class="rule-card searchable" data-search="電動車充電設備裝設辦法 充電設備申請、施工與驗收規範">
-  <img class="secretary-mini" src="sec_point.jpg" alt="一嶼小秘書">
-  <div class="rule-copy"><span class="date">制定／修訂 115.05.23</span><h3>電動車充電設備裝設辦法</h3><p>充電設備申請、施工與驗收規範</p>
-  <button class="btn" onclick="openRule('rule_ev.pdf','電動車充電設備裝設辦法','sec_point.jpg')">查看辦法</button></div>
-</article>
-<article class="rule-card searchable" data-search="管理費收支辦法 管理費收取、繳納及收支規範">
-  <img class="secretary-mini" src="sec_phone.jpg" alt="一嶼小秘書">
-  <div class="rule-copy"><span class="date">制定／修訂 115.05.23</span><h3>管理費收支辦法</h3><p>管理費收取、繳納及收支規範</p>
-  <button class="btn" onclick="openRule('rule_fee.pdf','管理費收支辦法','sec_phone.jpg')">查看辦法</button></div>
-</article>
-<article class="rule-card searchable" data-search="環境清潔及垃圾分類管理辦法 垃圾分類、環境清潔及維護規範">
-  <img class="secretary-mini" src="sec_green.jpg" alt="一嶼小秘書">
-  <div class="rule-copy"><span class="date">制定／修訂 115.04.24</span><h3>環境清潔及垃圾分類管理辦法</h3><p>垃圾分類、環境清潔及維護規範</p>
-  <button class="btn" onclick="openRule('rule_cleaning.pdf','環境清潔及垃圾分類管理辦法','sec_green.jpg')">查看辦法</button></div>
+  <button class="btn" onclick="openRule('rule_access.pdf','門禁管理辦法','sec_access_plain.jpg')">查看辦法</button></div>
 </article>
 <article class="rule-card searchable" data-search="搬家管理辦法 搬家申請、押金及退場檢核">
-  <img class="secretary-mini" src="sec_move.jpg" alt="一嶼小秘書">
+  <img class="secretary-mini" src="sec_moving_plain.jpg" alt="一嶼小秘書">
   <div class="rule-copy"><span class="date">制定／修訂 115.07.23</span><h3>搬家管理辦法</h3><p>搬家申請、押金及退場檢核</p>
-  <button class="btn" onclick="openRule('rule_moving.pdf','搬家管理辦法','sec_move.jpg')">查看辦法</button></div>
+  <button class="btn" onclick="openRule('rule_moving.pdf','搬家管理辦法','sec_moving_plain.jpg')">查看辦法</button></div>
+</article>
+<article class="rule-card searchable" data-search="租售管理辦法 出租、承租及住戶資料規範">
+  <img class="secretary-mini" src="sec_rental_plain.jpg" alt="一嶼小秘書">
+  <div class="rule-copy"><span class="date">制定／修訂 115.05.23</span><h3>租售管理辦法</h3><p>出租、承租及住戶資料規範</p>
+  <button class="btn" onclick="openRule('rule_rental.pdf','租售管理辦法','sec_rental_plain.jpg')">查看辦法</button></div>
+</article>
+<article class="rule-card searchable" data-search="郵件包裹寄放管理辦法 郵件、包裹代收與領取規範">
+  <img class="secretary-mini" src="sec_parcel_plain.jpg" alt="一嶼小秘書">
+  <div class="rule-copy"><span class="date">制定／修訂 115.04.24</span><h3>郵件包裹寄放管理辦法</h3><p>郵件、包裹代收與領取規範</p>
+  <button class="btn" onclick="openRule('rule_parcel.pdf','郵件包裹寄放管理辦法','sec_parcel_plain.jpg')">查看辦法</button></div>
+</article>
+<article class="rule-card searchable" data-search="裝潢施工管理辦法 施工申請、保護、施工時間及驗退">
+  <img class="secretary-mini" src="sec_renovation_plain.jpg" alt="一嶼小秘書">
+  <div class="rule-copy"><span class="date">制定／修訂 115.08.20</span><h3>裝潢施工管理辦法</h3><p>施工申請、保護、施工時間及驗退</p>
+  <button class="btn" onclick="openRule('rule_renovation.pdf','裝潢施工管理辦法','sec_renovation_plain.jpg')">查看辦法</button></div>
+</article>
+<article class="rule-card searchable" data-search="電動車充電設備裝設辦法 充電設備申請、施工與驗收規範">
+  <img class="secretary-mini" src="sec_ev_plain.jpg" alt="一嶼小秘書">
+  <div class="rule-copy"><span class="date">制定／修訂 115.05.23</span><h3>電動車充電設備裝設辦法</h3><p>充電設備申請、施工與驗收規範</p>
+  <button class="btn" onclick="openRule('rule_ev.pdf','電動車充電設備裝設辦法','sec_ev_plain.jpg')">查看辦法</button></div>
+</article>
+<article class="rule-card searchable" data-search="管理費收支辦法 管理費收取、繳納及收支規範">
+  <img class="secretary-mini" src="sec_fee_plain.jpg" alt="一嶼小秘書">
+  <div class="rule-copy"><span class="date">制定／修訂 115.05.23</span><h3>管理費收支辦法</h3><p>管理費收取、繳納及收支規範</p>
+  <button class="btn" onclick="openRule('rule_fee.pdf','管理費收支辦法','sec_fee_plain.jpg')">查看辦法</button></div>
+</article>
+<article class="rule-card searchable" data-search="環境清潔及垃圾分類管理辦法 垃圾分類、環境清潔及維護規範">
+  <img class="secretary-mini" src="sec_cleaning_plain.jpg" alt="一嶼小秘書">
+  <div class="rule-copy"><span class="date">制定／修訂 115.04.24</span><h3>環境清潔及垃圾分類管理辦法</h3><p>垃圾分類、環境清潔及維護規範</p>
+  <button class="btn" onclick="openRule('rule_cleaning.pdf','環境清潔及垃圾分類管理辦法','sec_cleaning_plain.jpg')">查看辦法</button></div>
 </article></div>
   </section>
 
