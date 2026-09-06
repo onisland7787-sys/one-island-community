@@ -845,6 +845,7 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
   line-height:1;
   white-space:nowrap;
 }
+.page-view-counter{min-width:auto!important;box-sizing:border-box;}
 .page-view-counter strong{
   color:#1f6f68;
   font-size:13px;
@@ -2005,30 +2006,41 @@ if ('serviceWorker' in navigator) {
 
 <!-- GoatCounter：大毅一嶼社區服務知識庫 -->
 <script data-goatcounter="https://onisland7787-sys.goatcounter.com/count"
+        data-goatcounter-settings='{"path":"/one-island-community/"}'
         async src="https://gc.zgo.at/count.js"></script>
-<script id="v47-goatcounter-display">
+
+
+
+<script id="v48-clean-counter">
 (function(){
-  var tries = 0;
-  var timer = setInterval(function(){
-    tries++;
-    if(window.goatcounter && typeof window.goatcounter.visit_count === 'function'){
-      clearInterval(timer);
-      var el = document.getElementById('pageViewCount');
-      if(!el) return;
-      el.textContent = '';
-      try{
-        window.goatcounter.visit_count({append:'#pageViewCount'});
-      }catch(e){
-        el.textContent = '—';
+  var el = document.getElementById('pageViewCount');
+  if(!el) return;
+
+  function loadCount(){
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', function(){
+      if(this.status >= 200 && this.status < 300){
+        try{
+          var data = JSON.parse(this.responseText);
+          if(data && data.count != null){
+            el.textContent = data.count;
+            return;
+          }
+        }catch(e){}
       }
-      return;
-    }
-    if(tries > 100){
-      clearInterval(timer);
-      var el2 = document.getElementById('pageViewCount');
-      if(el2) el2.textContent = '—';
-    }
-  }, 100);
+      el.textContent = '—';
+    });
+    xhr.addEventListener('error', function(){ el.textContent = '—'; });
+    xhr.open('GET',
+      'https://onisland7787-sys.goatcounter.com/counter/' +
+      encodeURIComponent('/one-island-community/') +
+      '.json?_=' + Date.now()
+    );
+    xhr.send();
+  }
+
+  // Give GoatCounter a moment to submit the current visit, then read the public JSON counter.
+  setTimeout(loadCount, 1200);
 })();
 </script>
 
