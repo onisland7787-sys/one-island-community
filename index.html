@@ -676,6 +676,34 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
  .facility-rule-box ul{font-size:15px;line-height:1.75;}
 }
 
+
+/* V37｜一嶼 Q&A */
+.line-hours{font-size:12px;color:#6d7f80;line-height:1.8}
+.qa-intro{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;margin:0 0 16px;border-radius:20px;background:linear-gradient(135deg,#eef8f5,#fff8e9);border:1px solid #dbe9e5;color:#31585e;line-height:1.7}
+.qa-intro b{font-size:18px;color:#164f58}.qa-count{white-space:nowrap;padding:10px 14px;border-radius:999px;background:#fff;color:#42706f;box-shadow:0 6px 18px rgba(33,75,73,.08)}.qa-count strong{font-size:20px;color:#176b67}
+.qa-tools{position:sticky;top:0;z-index:5;padding:12px 0 14px;background:linear-gradient(to bottom,rgba(248,251,250,.98),rgba(248,251,250,.92),rgba(248,251,250,0))}
+.qa-search{width:100%;box-sizing:border-box;border:1px solid #cfe0dc;border-radius:16px;padding:14px 16px;font-size:15px;background:#fff;outline:none;box-shadow:0 6px 18px rgba(36,70,68,.05)}
+.qa-search:focus{border-color:#4a978b;box-shadow:0 0 0 3px rgba(74,151,139,.12)}
+.qa-categories{display:flex;gap:8px;overflow:auto;padding:10px 2px 2px;scrollbar-width:none}.qa-categories::-webkit-scrollbar{display:none}
+.qa-chip{border:1px solid #d7e5e1;background:#fff;color:#426568;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:800;white-space:nowrap;cursor:pointer}
+.qa-chip.active{background:#1f756d;color:#fff;border-color:#1f756d}
+.qa-list{display:grid;gap:10px}
+.qa-item{border:1px solid #dce9e5;border-radius:18px;background:#fff;box-shadow:0 7px 20px rgba(34,72,70,.05);overflow:hidden}
+.qa-item[open]{border-color:#c6ddd7;box-shadow:0 12px 28px rgba(34,72,70,.08)}
+.qa-item summary{list-style:none;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:17px 18px;cursor:pointer}.qa-item summary::-webkit-details-marker{display:none}
+.qa-item summary::after{content:"＋";font-size:21px;font-weight:400;color:#56827f;grid-column:4}.qa-item[open] summary::after{content:"−"}
+.qa-num{font-size:11px;font-weight:900;letter-spacing:.06em;color:#a98238;background:#fff6df;border-radius:999px;padding:6px 8px}
+.qa-question{font-size:16.5px;font-weight:850;line-height:1.5;color:#194e56}
+.qa-tag{font-size:11px;font-weight:800;color:#4b7774;background:#edf6f3;border-radius:999px;padding:6px 9px;white-space:nowrap}.qa-tag.new{background:#fff0cc;color:#8a671c}
+.qa-answer{padding:0 18px 18px 64px;border-top:1px dashed #e4ece9}.qa-answer p{font-size:15px;line-height:1.85;color:#415c60;margin:15px 0 9px}.qa-source{font-size:11.5px;color:#899899}
+.qa-no-result{display:none;text-align:center;padding:30px;color:#738588}.qa-footnote{margin-top:18px;padding:14px 16px;border-radius:14px;background:#f1f6f4;color:#718282;font-size:12px;line-height:1.7}
+@media(max-width:820px){
+ .qa-intro{align-items:flex-start;padding:16px}.qa-intro b{font-size:16px}.qa-count{font-size:11px;padding:8px 10px}
+ .qa-tools{top:0}.qa-search{font-size:16px}
+ .qa-item summary{grid-template-columns:auto 1fr;gap:9px;padding:15px 14px}.qa-item summary::after{grid-column:3;grid-row:1 / span 2}
+ .qa-tag{grid-column:2;width:max-content}.qa-question{font-size:15px}.qa-answer{padding:0 14px 16px 48px}.qa-answer p{font-size:14.5px;line-height:1.8}
+}
+
 </style>
 
 <link rel="manifest" href="manifest.webmanifest">
@@ -696,11 +724,12 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
   <button type="button" onclick="showSection('rules',this)">管理辦法</button>
   <button type="button" class="active" onclick="showSection('community',this)">社區介紹</button>
   <button type="button" onclick="showSection('downloads',this)">表格下載</button>
+  <button type="button" onclick="showSection('qa',this)">一嶼 Q&amp;A</button>
  </nav>
  <div class="contact">
   <b>聯絡我們</b>
   電話：<a href="tel:0424211470">04-24211470</a><br>
-  官方 LINE ID：<strong>@295myoxf</strong>
+  官方 LINE ID：<strong>@295myoxf</strong><br><span class="line-hours">LINE 服務時間：10:00–18:00</span>
  </div>
 </aside>
 
@@ -785,7 +814,7 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
       <div class="facility-summary"><h4>使用重點</h4><ul>
         <li><b>開放時間：</b>09:00–22:00。</li>
         <li><b>一般使用：</b>20點／人／小時，空調費30元／人／小時；<br>每次最多2小時。</li>
-        <li><b>人數：</b>同戶最多4人、全場最多8人，不得跨戶使用；<br>廚具設備不開放。</li>
+        <li><b>人數：</b>同戶最多4人、全場最多8人，不得跨戶使用；<br>一般使用廚具不開放，包場可使用。</li>
         <li><b>包場：</b>3日前、30日內預約；<br>300元／小時，押金2,000元，每次最多4小時、最多8人。</li>
         <li><b>注意：</b>訪客須由住戶陪同；<br>可自帶飲食但禁止明火、吸菸、嚼檳榔；<br>使用後須清潔復原。</li>
       </ul></div>
@@ -878,6 +907,802 @@ button,input{font:inherit} a{color:inherit;text-decoration:none}
 </article></div>
   </section>
 
+
+  <section id="qa" class="section">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">ONE ISLAND Q&A</div>
+        <h2>一嶼 Q&amp;A</h2>
+        <p>從入住、管理費、訪客、停車、搬家到裝潢與公設，快速找到社區生活答案。</p>
+      </div>
+    </div>
+    <div class="qa-intro">
+      <div><b>新入住一嶼，不知道從哪裡開始？</b><br>先點「新住戶必看」，常用流程一次整理。</div>
+      <div class="qa-count">目前收錄 <strong>70</strong> 題</div>
+    </div>
+    <div class="qa-tools">
+      <input id="qaSearch" class="qa-search" placeholder="搜尋問題，例如：搬家、管理費、訪客、裝潢、健身房…">
+      <div class="qa-categories">
+        <button type="button" class="qa-chip active" data-cat="全部">全部</button><button type="button" class="qa-chip" data-cat="新住戶必看">新住戶必看</button><button type="button" class="qa-chip" data-cat="管理費">管理費</button><button type="button" class="qa-chip" data-cat="門禁訪客">門禁訪客</button><button type="button" class="qa-chip" data-cat="停車場">停車場</button><button type="button" class="qa-chip" data-cat="搬家">搬家</button><button type="button" class="qa-chip" data-cat="裝潢施工">裝潢施工</button><button type="button" class="qa-chip" data-cat="公共設施">公共設施</button><button type="button" class="qa-chip" data-cat="包裹郵件">包裹郵件</button><button type="button" class="qa-chip" data-cat="租售仲介">租售仲介</button><button type="button" class="qa-chip" data-cat="充電樁">充電樁</button><button type="button" class="qa-chip" data-cat="垃圾環境">垃圾環境</button>
+      </div>
+    </div>
+    <div id="qaList" class="qa-list">
+      
+    <details class="qa-item searchable" data-category="新住戶必看" data-search="新住戶必看 我是新入住住戶，第一件事情要辦什麼？ 請先至管理中心櫃檯完成住戶基本資料建檔，並開通「智生活」，同時確認門禁感應扣、車輛 E-TAG 等資料是否完成設定。若為承租戶，須由屋主或受委託仲介陪同至管理中心辦理住戶資料、感應扣及 E-TAG 設定，並依規定提供租賃人與同住人資料。完成後，再確認管理費繳納方式、公設使用方式，以及近期是否有搬家、裝潢或充電樁等申請需求。">
+      <summary>
+        <span class="qa-num">Q01</span>
+        <span class="qa-question">我是新入住住戶，第一件事情要辦什麼？</span>
+        <span class="qa-tag new">新住戶必看</span>
+      </summary>
+      <div class="qa-answer">
+        <p>請先至管理中心櫃檯完成住戶基本資料建檔，並開通「智生活」，同時確認門禁感應扣、車輛 E-TAG 等資料是否完成設定。若為承租戶，須由屋主或受委託仲介陪同至管理中心辦理住戶資料、感應扣及 E-TAG 設定，並依規定提供租賃人與同住人資料。完成後，再確認管理費繳納方式、公設使用方式，以及近期是否有搬家、裝潢或充電樁等申請需求。</p>
+        <div class="qa-source">依據：租售管理辦法＋管理中心現行作業</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="新住戶必看" data-search="新住戶必看 我是租客，也可以使用社區公設嗎？ 完成住戶資料建檔後，承租人屬社區實際居住使用人，仍須遵守社區規約及各項管理辦法。各公設的使用方式、點數、人數及陪同規定，請依各公設管理規定辦理。">
+      <summary>
+        <span class="qa-num">Q02</span>
+        <span class="qa-question">我是租客，也可以使用社區公設嗎？</span>
+        <span class="qa-tag new">新住戶必看</span>
+      </summary>
+      <div class="qa-answer">
+        <p>完成住戶資料建檔後，承租人屬社區實際居住使用人，仍須遵守社區規約及各項管理辦法。各公設的使用方式、點數、人數及陪同規定，請依各公設管理規定辦理。</p>
+        <div class="qa-source">依據：租售管理辦法／公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="新住戶必看" data-search="新住戶必看 社區管理辦法在哪裡看？ 可直接在本網站「管理辦法」查看目前社區各項管理辦法；如需申請書，可至「表格下載」取得。">
+      <summary>
+        <span class="qa-num">Q03</span>
+        <span class="qa-question">社區管理辦法在哪裡看？</span>
+        <span class="qa-tag new">新住戶必看</span>
+      </summary>
+      <div class="qa-answer">
+        <p>可直接在本網站「管理辦法」查看目前社區各項管理辦法；如需申請書，可至「表格下載」取得。</p>
+        <div class="qa-source">依據：社區服務知識庫</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="新住戶必看" data-search="新住戶必看 管理辦法沒有寫到的事情怎麼辦？ 請先洽管理中心確認，不建議自行推定。規約未規定的共用部分及約定共用部分使用管理事項，得由管理委員會另訂管理辦法。">
+      <summary>
+        <span class="qa-num">Q04</span>
+        <span class="qa-question">管理辦法沒有寫到的事情怎麼辦？</span>
+        <span class="qa-tag new">新住戶必看</span>
+      </summary>
+      <div class="qa-answer">
+        <p>請先洽管理中心確認，不建議自行推定。規約未規定的共用部分及約定共用部分使用管理事項，得由管理委員會另訂管理辦法。</p>
+        <div class="qa-source">依據：社區規約</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="管理費" data-search="管理費 住宅管理費是多少？ 住宅管理費為每坪每月 120 元；平面車位管理費為每車位每月 500 元。">
+      <summary>
+        <span class="qa-num">Q05</span>
+        <span class="qa-question">住宅管理費是多少？</span>
+        <span class="qa-tag">管理費</span>
+      </summary>
+      <div class="qa-answer">
+        <p>住宅管理費為每坪每月 120 元；平面車位管理費為每車位每月 500 元。</p>
+        <div class="qa-source">依據：社區規約／管理費收支辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="管理費" data-search="管理費 我有兩個汽車位，車位管理費怎麼算？ 依每車位每月 500 元計算，因此兩個車位即依兩個車位計收。">
+      <summary>
+        <span class="qa-num">Q06</span>
+        <span class="qa-question">我有兩個汽車位，車位管理費怎麼算？</span>
+        <span class="qa-tag">管理費</span>
+      </summary>
+      <div class="qa-answer">
+        <p>依每車位每月 500 元計算，因此兩個車位即依兩個車位計收。</p>
+        <div class="qa-source">依據：社區規約／管理費收支辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="管理費" data-search="管理費 管理費多久收一次？ 規約載明每一個月為一期、每次收三期。實際各期繳費通知及期限，請依管理委員會或管理中心當期通知辦理。">
+      <summary>
+        <span class="qa-num">Q07</span>
+        <span class="qa-question">管理費多久收一次？</span>
+        <span class="qa-tag">管理費</span>
+      </summary>
+      <div class="qa-answer">
+        <p>規約載明每一個月為一期、每次收三期。實際各期繳費通知及期限，請依管理委員會或管理中心當期通知辦理。</p>
+        <div class="qa-source">依據：社區規約／管理費收支辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="管理費" data-search="管理費 管理費可以怎麼繳？ 依目前社區作業，可使用智生活 APP 繳費系統或依管理中心提供的繳費方式辦理；實際可用方式以當期繳費通知為準。">
+      <summary>
+        <span class="qa-num">Q08</span>
+        <span class="qa-question">管理費可以怎麼繳？</span>
+        <span class="qa-tag">管理費</span>
+      </summary>
+      <div class="qa-answer">
+        <p>依目前社區作業，可使用智生活 APP 繳費系統或依管理中心提供的繳費方式辦理；實際可用方式以當期繳費通知為準。</p>
+        <div class="qa-source">依據：管理費收支辦法＋管理中心現行作業</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="門禁訪客" data-search="門禁訪客 朋友來找我，需要登記嗎？ 若訪客自行進入社區，須依門禁程序完成身分確認及登記，並經住戶確認後放行。">
+      <summary>
+        <span class="qa-num">Q09</span>
+        <span class="qa-question">朋友來找我，需要登記嗎？</span>
+        <span class="qa-tag">門禁訪客</span>
+      </summary>
+      <div class="qa-answer">
+        <p>若訪客自行進入社區，須依門禁程序完成身分確認及登記，並經住戶確認後放行。</p>
+        <div class="qa-source">依據：門禁管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="門禁訪客" data-search="門禁訪客 我自己下樓帶朋友進來，還要登記嗎？ 由住戶親自陪同帶領的訪客，可依現行門禁規定免辦一般訪客換證登記。">
+      <summary>
+        <span class="qa-num">Q10</span>
+        <span class="qa-question">我自己下樓帶朋友進來，還要登記嗎？</span>
+        <span class="qa-tag">門禁訪客</span>
+      </summary>
+      <div class="qa-answer">
+        <p>由住戶親自陪同帶領的訪客，可依現行門禁規定免辦一般訪客換證登記。</p>
+        <div class="qa-source">依據：門禁管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="門禁訪客" data-search="門禁訪客 我已經先跟管理中心說朋友會來，他就可以直接進來嗎？ 若住戶沒有親自陪同，即使事前已通知管理中心，訪客仍須依門禁程序完成必要登記。">
+      <summary>
+        <span class="qa-num">Q11</span>
+        <span class="qa-question">我已經先跟管理中心說朋友會來，他就可以直接進來嗎？</span>
+        <span class="qa-tag">門禁訪客</span>
+      </summary>
+      <div class="qa-answer">
+        <p>若住戶沒有親自陪同，即使事前已通知管理中心，訪客仍須依門禁程序完成必要登記。</p>
+        <div class="qa-source">依據：門禁管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="門禁訪客" data-search="門禁訪客 朋友要開車進地下室怎麼辦？ 住戶應事先通知管理中心訪客車牌、車色及停放車位等資訊。訪客停妥後仍應依社區門禁規定完成訪客程序；若由住戶親自至地下室接待陪同，則依住戶陪同訪客方式辦理。">
+      <summary>
+        <span class="qa-num">Q12</span>
+        <span class="qa-question">朋友要開車進地下室怎麼辦？</span>
+        <span class="qa-tag">門禁訪客</span>
+      </summary>
+      <div class="qa-answer">
+        <p>住戶應事先通知管理中心訪客車牌、車色及停放車位等資訊。訪客停妥後仍應依社區門禁規定完成訪客程序；若由住戶親自至地下室接待陪同，則依住戶陪同訪客方式辦理。</p>
+        <div class="qa-source">依據：門禁管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="門禁訪客" data-search="門禁訪客 推銷人員可以直接進社區嗎？ 未經管理委員會同意的推銷人員不得任意進入社區。">
+      <summary>
+        <span class="qa-num">Q13</span>
+        <span class="qa-question">推銷人員可以直接進社區嗎？</span>
+        <span class="qa-tag">門禁訪客</span>
+      </summary>
+      <div class="qa-answer">
+        <p>未經管理委員會同意的推銷人員不得任意進入社區。</p>
+        <div class="qa-source">依據：門禁管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="門禁訪客" data-search="門禁訪客 裝潢工班可以使用住戶感應扣嗎？ 裝潢工班進場仍須依裝潢施工管理辦法完成申請及施工管制。施工期間如使用住戶感應扣，應依現場管理規定辦理，並於每日施工結束、最晚 17:00 離場時歸還住戶感應扣，不得由工班自行留存跨日使用。">
+      <summary>
+        <span class="qa-num">Q14</span>
+        <span class="qa-question">裝潢工班可以使用住戶感應扣嗎？</span>
+        <span class="qa-tag">門禁訪客</span>
+      </summary>
+      <div class="qa-answer">
+        <p>裝潢工班進場仍須依裝潢施工管理辦法完成申請及施工管制。施工期間如使用住戶感應扣，應依現場管理規定辦理，並於每日施工結束、最晚 17:00 離場時歸還住戶感應扣，不得由工班自行留存跨日使用。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法＋管理中心現行作業</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 一個汽車位可以停兩台車嗎？ 不可以。單一汽車停車格限停 1 輛汽車或 1 輛紅／黃牌大型重型機車。">
+      <summary>
+        <span class="qa-num">Q15</span>
+        <span class="qa-question">一個汽車位可以停兩台車嗎？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。單一汽車停車格限停 1 輛汽車或 1 輛紅／黃牌大型重型機車。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 車位裡可以放紙箱、工具或雜物嗎？ 不可以。汽車停車格原則上不得放置汽車或大型重型機車以外的雜物或工具。">
+      <summary>
+        <span class="qa-num">Q16</span>
+        <span class="qa-question">車位裡可以放紙箱、工具或雜物嗎？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。汽車停車格原則上不得放置汽車或大型重型機車以外的雜物或工具。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 機車格可以放東西嗎？ 機車停車格僅能停放 1 輛機車或自行車，不得置放機車或自行車以外的雜物或工具。">
+      <summary>
+        <span class="qa-num">Q17</span>
+        <span class="qa-question">機車格可以放東西嗎？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>機車停車格僅能停放 1 輛機車或自行車，不得置放機車或自行車以外的雜物或工具。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 一個車位可以登記幾台車的 E-TAG？ 一個汽車停車格最多設定 2 台 E-TAG；一戶有兩個汽車停車格時，最多設定 4 台。">
+      <summary>
+        <span class="qa-num">Q18</span>
+        <span class="qa-question">一個車位可以登記幾台車的 E-TAG？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>一個汽車停車格最多設定 2 台 E-TAG；一戶有兩個汽車停車格時，最多設定 4 台。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 我的車送修，代步車可以進社區嗎？ 可以，但須事先向管理中心登記代步車車牌及預計使用期限。臨時門禁權限只在申請期限內有效，到期後會取消；需要延長時須重新申請。">
+      <summary>
+        <span class="qa-num">Q19</span>
+        <span class="qa-question">我的車送修，代步車可以進社區嗎？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>可以，但須事先向管理中心登記代步車車牌及預計使用期限。臨時門禁權限只在申請期限內有效，到期後會取消；需要延長時須重新申請。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 我的私人車位可以租給社區外的人嗎？ 不可以。依目前地下室停車場管理辦法，車位不得出租或出借給非本社區住戶使用。">
+      <summary>
+        <span class="qa-num">Q20</span>
+        <span class="qa-question">我的私人車位可以租給社區外的人嗎？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。依目前地下室停車場管理辦法，車位不得出租或出借給非本社區住戶使用。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="停車場" data-search="停車場 停車場車輛發生刮傷或失竊，可以要求管委會賠償嗎？ 停車場管理辦法載明，區分所有權人應就自身責任範圍管理，不得直接向管委會或管理服務人員請求車輛事故、毀損、失竊或人身事故損害賠償。">
+      <summary>
+        <span class="qa-num">Q21</span>
+        <span class="qa-question">停車場車輛發生刮傷或失竊，可以要求管委會賠償嗎？</span>
+        <span class="qa-tag">停車場</span>
+      </summary>
+      <div class="qa-answer">
+        <p>停車場管理辦法載明，區分所有權人應就自身責任範圍管理，不得直接向管委會或管理服務人員請求車輛事故、毀損、失竊或人身事故損害賠償。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="搬家" data-search="搬家 搬家要先申請嗎？要繳保證金嗎？ 要。搬入或搬出前須依搬家管理辦法向管理中心辦理申請，搬家保證金為 5,000 元／次。搬家完成後，管理中心會依退場檢核表檢查公共空間、公共設施、垃圾廢材、電梯車廂及其他違規事項，確認無須扣款後，再依程序辦理保證金退還。">
+      <summary>
+        <span class="qa-num">Q22</span>
+        <span class="qa-question">搬家要先申請嗎？要繳保證金嗎？</span>
+        <span class="qa-tag">搬家</span>
+      </summary>
+      <div class="qa-answer">
+        <p>要。搬入或搬出前須依搬家管理辦法向管理中心辦理申請，搬家保證金為 5,000 元／次。搬家完成後，管理中心會依退場檢核表檢查公共空間、公共設施、垃圾廢材、電梯車廂及其他違規事項，確認無須扣款後，再依程序辦理保證金退還。</p>
+        <div class="qa-source">依據：搬家管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="搬家" data-search="搬家 只是送沙發、冰箱，也算搬家嗎？ 大型家具、家電搬運仍有進場管理要求。依現行規定，大型家具、家電搬遷原則上應提前一週向管理中心辦理申請。">
+      <summary>
+        <span class="qa-num">Q23</span>
+        <span class="qa-question">只是送沙發、冰箱，也算搬家嗎？</span>
+        <span class="qa-tag">搬家</span>
+      </summary>
+      <div class="qa-answer">
+        <p>大型家具、家電搬運仍有進場管理要求。依現行規定，大型家具、家電搬遷原則上應提前一週向管理中心辦理申請。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法／大型家具搬運申請</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="搬家" data-search="搬家 搬家或大型家具可以從一樓大廳搬嗎？ 大型家具、家電及搬運物品應依社區指定搬運動線辦理，原則不得自行由一樓大廳進出。需由地下室車道進出的車輛，另須注意車道限高 2.1 公尺；超高車輛或特殊搬運情形，應事先洽管理中心確認可行方式。">
+      <summary>
+        <span class="qa-num">Q24</span>
+        <span class="qa-question">搬家或大型家具可以從一樓大廳搬嗎？</span>
+        <span class="qa-tag">搬家</span>
+      </summary>
+      <div class="qa-answer">
+        <p>大型家具、家電及搬運物品應依社區指定搬運動線辦理，原則不得自行由一樓大廳進出。需由地下室車道進出的車輛，另須注意車道限高 2.1 公尺；超高車輛或特殊搬運情形，應事先洽管理中心確認可行方式。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法＋管理中心現行作業</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="搬家" data-search="搬家 週日可以搬家嗎？ 依現行搬運規範，週日及國定假日不得進行大型家具搬運。">
+      <summary>
+        <span class="qa-num">Q25</span>
+        <span class="qa-question">週日可以搬家嗎？</span>
+        <span class="qa-tag">搬家</span>
+      </summary>
+      <div class="qa-answer">
+        <p>依現行搬運規範，週日及國定假日不得進行大型家具搬運。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="搬家" data-search="搬家 搬家完成後，保證金怎麼退？ 搬家完成後由管理中心依退場檢核表檢查公共空間、公共設施、垃圾廢材、電梯車廂及其他違規事項；確認無損壞、無需扣款後，再依程序辦理保證金退還。">
+      <summary>
+        <span class="qa-num">Q26</span>
+        <span class="qa-question">搬家完成後，保證金怎麼退？</span>
+        <span class="qa-tag">搬家</span>
+      </summary>
+      <div class="qa-answer">
+        <p>搬家完成後由管理中心依退場檢核表檢查公共空間、公共設施、垃圾廢材、電梯車廂及其他違規事項；確認無損壞、無需扣款後，再依程序辦理保證金退還。</p>
+        <div class="qa-source">依據：搬家管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 我要裝潢，最晚什麼時候申請？ 應於施工前 3 日向管理中心提出申請，並依規定完成文件、費用、保護及相關查核程序後，才可依規定施工。">
+      <summary>
+        <span class="qa-num">Q27</span>
+        <span class="qa-question">我要裝潢，最晚什麼時候申請？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>應於施工前 3 日向管理中心提出申請，並依規定完成文件、費用、保護及相關查核程序後，才可依規定施工。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 裝潢保證金多少？怎麼繳？ 裝潢保證金目前為 30,000 元／次；另依施工期間收取裝潢清潔費。保證金及清潔費須匯款至社區指定帳戶，住戶或設計公司完成匯款後，應提供匯款證明，由管理中心確認款項實際入帳後，才完成收款程序。匯款及後續退款所產生的手續費，均由住戶或設計公司自行負擔。">
+      <summary>
+        <span class="qa-num">Q28</span>
+        <span class="qa-question">裝潢保證金多少？怎麼繳？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>裝潢保證金目前為 30,000 元／次；另依施工期間收取裝潢清潔費。保證金及清潔費須匯款至社區指定帳戶，住戶或設計公司完成匯款後，應提供匯款證明，由管理中心確認款項實際入帳後，才完成收款程序。匯款及後續退款所產生的手續費，均由住戶或設計公司自行負擔。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法＋委員會決議</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 裝潢清潔費是多少？ 裝潢清潔費為 1,500 元／月；不足 1 週收 500 元，不足 2 週收 1,000 元。">
+      <summary>
+        <span class="qa-num">Q29</span>
+        <span class="qa-question">裝潢清潔費是多少？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>裝潢清潔費為 1,500 元／月；不足 1 週收 500 元，不足 2 週收 1,000 元。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 裝潢施工時間是幾點？ 一般施工時間為 08:00–12:00、13:30–17:00。">
+      <summary>
+        <span class="qa-num">Q30</span>
+        <span class="qa-question">裝潢施工時間是幾點？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>一般施工時間為 08:00–12:00、13:30–17:00。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 中午可以繼續施工嗎？ 不可以。12:00–13:30 不在一般施工時段內。">
+      <summary>
+        <span class="qa-num">Q31</span>
+        <span class="qa-question">中午可以繼續施工嗎？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。12:00–13:30 不在一般施工時段內。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 假日可以做沒有聲音的工程嗎？ 無聲施工須依規定至少提前 2 日申請；實際可否施工仍須依當日社區及政府公告情形辦理。">
+      <summary>
+        <span class="qa-num">Q32</span>
+        <span class="qa-question">假日可以做沒有聲音的工程嗎？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>無聲施工須依規定至少提前 2 日申請；實際可否施工仍須依當日社區及政府公告情形辦理。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 颱風天停班停課，工人可以進來做無聲施工嗎？ 不可以。政府公告停班停課時，所有施工均停止，包含無聲施工。">
+      <summary>
+        <span class="qa-num">Q33</span>
+        <span class="qa-question">颱風天停班停課，工人可以進來做無聲施工嗎？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。政府公告停班停課時，所有施工均停止，包含無聲施工。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 裝潢申請完成就可以馬上施工嗎？ 不是。除文件與費用外，還須完成公共區域既有缺失確認、必要拍照、保護措施及相關勘驗，完成施工許可程序後才能進場施工。">
+      <summary>
+        <span class="qa-num">Q34</span>
+        <span class="qa-question">裝潢申請完成就可以馬上施工嗎？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不是。除文件與費用外，還須完成公共區域既有缺失確認、必要拍照、保護措施及相關勘驗，完成施工許可程序後才能進場施工。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 我可以直接跟櫃檯約裝潢勘驗時間嗎？ 可以提出希望時段，但實際勘驗時間須由管理中心先向社區經理確認後才能完成預約，櫃檯不能直接承諾固定時段。">
+      <summary>
+        <span class="qa-num">Q35</span>
+        <span class="qa-question">我可以直接跟櫃檯約裝潢勘驗時間嗎？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>可以提出希望時段，但實際勘驗時間須由管理中心先向社區經理確認後才能完成預約，櫃檯不能直接承諾固定時段。</p>
+        <div class="qa-source">依據：管理中心現行作業</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="裝潢施工" data-search="裝潢施工 施工人員可以在社區抽菸嗎？ 不可以。施工人員不得於社區範圍內抽菸、嚼食檳榔或有其他管理辦法禁止的行為。">
+      <summary>
+        <span class="qa-num">Q36</span>
+        <span class="qa-question">施工人員可以在社區抽菸嗎？</span>
+        <span class="qa-tag">裝潢施工</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。施工人員不得於社區範圍內抽菸、嚼食檳榔或有其他管理辦法禁止的行為。</p>
+        <div class="qa-source">依據：裝潢施工管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 健身房幾點開？怎麼使用？ 健身房開放時間為 06:00–24:00。每人每小時 20 點，每次使用上限 2 小時；同戶上限 2 人、全場上限 5 人。健身房不提供包場。">
+      <summary>
+        <span class="qa-num">Q37</span>
+        <span class="qa-question">健身房幾點開？怎麼使用？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>健身房開放時間為 06:00–24:00。每人每小時 20 點，每次使用上限 2 小時；同戶上限 2 人、全場上限 5 人。健身房不提供包場。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 媽媽教室怎麼使用？可以包場嗎？ 媽媽教室開放時間為 09:00–22:00。一般使用為 20 點／人／小時，空調費 30 元／人／小時，每次最多 2 小時；同戶最多 4 人、全場最多 8 人。也可採包場方式使用，須於 3 日前申請，且預約日期須在 30 日內；包場費用為 300 元／小時、押金 2,000 元，最多 4 小時、全場最多 8 人。">
+      <summary>
+        <span class="qa-num">Q38</span>
+        <span class="qa-question">媽媽教室怎麼使用？可以包場嗎？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>媽媽教室開放時間為 09:00–22:00。一般使用為 20 點／人／小時，空調費 30 元／人／小時，每次最多 2 小時；同戶最多 4 人、全場最多 8 人。也可採包場方式使用，須於 3 日前申請，且預約日期須在 30 日內；包場費用為 300 元／小時、押金 2,000 元，最多 4 小時、全場最多 8 人。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 媽媽教室可以使用廚具設備嗎？ 一般非包場使用時，廚具設備不開放；媽媽教室採包場方式使用時，可使用廚具設備。">
+      <summary>
+        <span class="qa-num">Q39</span>
+        <span class="qa-question">媽媽教室可以使用廚具設備嗎？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>一般非包場使用時，廚具設備不開放；媽媽教室採包場方式使用時，可使用廚具設備。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法＋管理中心現行作業</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 空中酒吧可以包場嗎？ 可以。開放時間為 09:00–22:00，採包場使用；須於 3 日前申請且預約日期須在 30 日內。費用 300 元／小時、押金 2,000 元，最多 4 小時、8 人。">
+      <summary>
+        <span class="qa-num">Q40</span>
+        <span class="qa-question">空中酒吧可以包場嗎？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>可以。開放時間為 09:00–22:00，採包場使用；須於 3 日前申請且預約日期須在 30 日內。費用 300 元／小時、押金 2,000 元，最多 4 小時、8 人。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 朋友可以一起使用公設嗎？ 可以依各公設規定辦理，但訪客須由住戶陪同，並受各公設的人數、登記、點數及使用限制約束。">
+      <summary>
+        <span class="qa-num">Q41</span>
+        <span class="qa-question">朋友可以一起使用公設嗎？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>可以依各公設規定辦理，但訪客須由住戶陪同，並受各公設的人數、登記、點數及使用限制約束。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 可以把公設拿來拍商品廣告嗎？ 原則不可以。管理辦法禁止將公設作為商業或廣告宣傳背景或場所；經管理委員會審核通過者除外。">
+      <summary>
+        <span class="qa-num">Q42</span>
+        <span class="qa-question">可以把公設拿來拍商品廣告嗎？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>原則不可以。管理辦法禁止將公設作為商業或廣告宣傳背景或場所；經管理委員會審核通過者除外。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 包場押金什麼時候退？ 使用完畢後，由管理中心檢查場地、器具及設備；確認無異狀或損壞後始退還押金。若有損壞，可自押金扣除，不足部分仍須賠償。">
+      <summary>
+        <span class="qa-num">Q43</span>
+        <span class="qa-question">包場押金什麼時候退？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>使用完畢後，由管理中心檢查場地、器具及設備；確認無異狀或損壞後始退還押金。若有損壞，可自押金扣除，不足部分仍須賠償。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="公共設施" data-search="公共設施 交誼廳需要預約嗎？ 不需要。交誼廳為公共開放空間，免費使用，不受理包場或預約；22:00 後請降低音量。">
+      <summary>
+        <span class="qa-num">Q44</span>
+        <span class="qa-question">交誼廳需要預約嗎？</span>
+        <span class="qa-tag">公共設施</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不需要。交誼廳為公共開放空間，免費使用，不受理包場或預約；22:00 後請降低音量。</p>
+        <div class="qa-source">依據：公共設施使用管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="包裹郵件" data-search="包裹郵件 包裹可以放管理中心多久？ 一般包裹原則上最長寄放 3 日，收到通知後請儘速領取。">
+      <summary>
+        <span class="qa-num">Q45</span>
+        <span class="qa-question">包裹可以放管理中心多久？</span>
+        <span class="qa-tag">包裹郵件</span>
+      </summary>
+      <div class="qa-answer">
+        <p>一般包裹原則上最長寄放 3 日，收到通知後請儘速領取。</p>
+        <div class="qa-source">依據：郵件包裹寄放管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="包裹郵件" data-search="包裹郵件 冷藏或冷凍包裹可以一直放嗎？ 不可以。冷藏、冷凍及具有保存期限的物品應儘速領取；假日冷藏／冷凍包裹依管理辦法的較短寄放期限辦理。">
+      <summary>
+        <span class="qa-num">Q46</span>
+        <span class="qa-question">冷藏或冷凍包裹可以一直放嗎？</span>
+        <span class="qa-tag">包裹郵件</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。冷藏、冷凍及具有保存期限的物品應儘速領取；假日冷藏／冷凍包裹依管理辦法的較短寄放期限辦理。</p>
+        <div class="qa-source">依據：郵件包裹寄放管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="包裹郵件" data-search="包裹郵件 貨到付款，管理中心可以先幫我付嗎？ 不可以。管理中心不代墊貨到付款或其他應由收件人支付的款項；如有需要，可依管理辦法事先留足款項處理。">
+      <summary>
+        <span class="qa-num">Q47</span>
+        <span class="qa-question">貨到付款，管理中心可以先幫我付嗎？</span>
+        <span class="qa-tag">包裹郵件</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。管理中心不代墊貨到付款或其他應由收件人支付的款項；如有需要，可依管理辦法事先留足款項處理。</p>
+        <div class="qa-source">依據：郵件包裹寄放管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="包裹郵件" data-search="包裹郵件 我出國一週，包裹怎麼辦？ 如已知長時間不在社區，可事前向管理中心登記預計返回日期，再依郵件包裹寄放管理辦法辦理。">
+      <summary>
+        <span class="qa-num">Q48</span>
+        <span class="qa-question">我出國一週，包裹怎麼辦？</span>
+        <span class="qa-tag">包裹郵件</span>
+      </summary>
+      <div class="qa-answer">
+        <p>如已知長時間不在社區，可事前向管理中心登記預計返回日期，再依郵件包裹寄放管理辦法辦理。</p>
+        <div class="qa-source">依據：郵件包裹寄放管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="包裹郵件" data-search="包裹郵件 大型包裹也可以一直放管理中心嗎？ 不可以。大型或特殊包裹須依管理辦法規定期限領取，以免占用公共寄放空間。">
+      <summary>
+        <span class="qa-num">Q49</span>
+        <span class="qa-question">大型包裹也可以一直放管理中心嗎？</span>
+        <span class="qa-tag">包裹郵件</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。大型或特殊包裹須依管理辦法規定期限領取，以免占用公共寄放空間。</p>
+        <div class="qa-source">依據：郵件包裹寄放管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 社區可以做 Airbnb 或日租嗎？ 不可以。租售管理辦法明定禁止經營日租套房。">
+      <summary>
+        <span class="qa-num">Q50</span>
+        <span class="qa-question">社區可以做 Airbnb 或日租嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。租售管理辦法明定禁止經營日租套房。</p>
+        <div class="qa-source">依據：租售管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 房子出租後，要通知管理中心嗎？ 要。完成租賃後，屋主或受委託仲介應陪同承租戶至管理中心完成住戶資料、感應扣及 E-TAG 等建檔程序。">
+      <summary>
+        <span class="qa-num">Q51</span>
+        <span class="qa-question">房子出租後，要通知管理中心嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>要。完成租賃後，屋主或受委託仲介應陪同承租戶至管理中心完成住戶資料、感應扣及 E-TAG 等建檔程序。</p>
+        <div class="qa-source">依據：租售管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 租客可以拿很多顆感應扣嗎？ 承租戶持有的社區感應扣數量，不得超過已向管理中心登記的實際居住人數；如有額外需求，須由所有權人申請或增購。">
+      <summary>
+        <span class="qa-num">Q52</span>
+        <span class="qa-question">租客可以拿很多顆感應扣嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>承租戶持有的社區感應扣數量，不得超過已向管理中心登記的實際居住人數；如有額外需求，須由所有權人申請或增購。</p>
+        <div class="qa-source">依據：租售管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 可以在窗戶貼「售屋」或「出租」海報嗎？ 不可以。租售海報不得張貼於社區外牆或窗戶內外。">
+      <summary>
+        <span class="qa-num">Q53</span>
+        <span class="qa-question">可以在窗戶貼「售屋」或「出租」海報嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。租售海報不得張貼於社區外牆或窗戶內外。</p>
+        <div class="qa-source">依據：租售管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 仲介帶看要預約嗎？ 要。須於前一天 08:00–21:00 向管理中心預約。帶看時段為 09:00–12:00、13:00–17:00，採整點預約，每組最長 30 分鐘。">
+      <summary>
+        <span class="qa-num">Q54</span>
+        <span class="qa-question">仲介帶看要預約嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>要。須於前一天 08:00–21:00 向管理中心預約。帶看時段為 09:00–12:00、13:00–17:00，採整點預約，每組最長 30 分鐘。</p>
+        <div class="qa-source">依據：仲介帶看管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 仲介帶看要收費嗎？ 每組每戶 100 元；同一組帶看多戶時，依實際帶看戶數計費。">
+      <summary>
+        <span class="qa-num">Q55</span>
+        <span class="qa-question">仲介帶看要收費嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>每組每戶 100 元；同一組帶看多戶時，依實際帶看戶數計費。</p>
+        <div class="qa-source">依據：仲介帶看管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 一次可以帶多少人看房？ 每組包含仲介在內最多 5 人。">
+      <summary>
+        <span class="qa-num">Q56</span>
+        <span class="qa-question">一次可以帶多少人看房？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>每組包含仲介在內最多 5 人。</p>
+        <div class="qa-source">依據：仲介帶看管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="租售仲介" data-search="租售仲介 仲介可以帶客人參觀公設、拍照嗎？ 未經許可不得任意參觀其他樓層、公設或拍照；仲介亦應配合社區門禁並維護住戶隱私。">
+      <summary>
+        <span class="qa-num">Q57</span>
+        <span class="qa-question">仲介可以帶客人參觀公設、拍照嗎？</span>
+        <span class="qa-tag">租售仲介</span>
+      </summary>
+      <div class="qa-answer">
+        <p>未經許可不得任意參觀其他樓層、公設或拍照；仲介亦應配合社區門禁並維護住戶隱私。</p>
+        <div class="qa-source">依據：仲介帶看管理辦法／租售管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 我的車位可以自己找廠商裝充電樁嗎？ 不能直接施工。須先向管理委員會提出書面申請，經核准後才能施工。">
+      <summary>
+        <span class="qa-num">Q58</span>
+        <span class="qa-question">我的車位可以自己找廠商裝充電樁嗎？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不能直接施工。須先向管理委員會提出書面申請，經核准後才能施工。</p>
+        <div class="qa-source">依據：電動車充電設備裝設辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 充電樁可以裝壁掛式嗎？ 目前管理辦法規定採立柱型，並設置於自有車格內。">
+      <summary>
+        <span class="qa-num">Q59</span>
+        <span class="qa-question">充電樁可以裝壁掛式嗎？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>目前管理辦法規定採立柱型，並設置於自有車格內。</p>
+        <div class="qa-source">依據：電動車充電設備裝設辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 充電樁最大可以裝幾 kW？ 上限為 AC 7kW。">
+      <summary>
+        <span class="qa-num">Q60</span>
+        <span class="qa-question">充電樁最大可以裝幾 kW？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>上限為 AC 7kW。</p>
+        <div class="qa-source">依據：電動車充電設備裝設辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 一戶可以裝兩支充電樁嗎？ 不可以。目前停車場管理辦法規定每戶僅能設置一組電動車充電設備。">
+      <summary>
+        <span class="qa-num">Q61</span>
+        <span class="qa-question">一戶可以裝兩支充電樁嗎？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。目前停車場管理辦法規定每戶僅能設置一組電動車充電設備。</p>
+        <div class="qa-source">依據：地下室停車場管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 裝充電樁要準備什麼？ 至少須提出施工申請表、施工計畫及材料規格等資料，充電設備亦須符合管理辦法所定的 CNS／VPC 等要求；詳細文件請依當期申請表逐項準備。">
+      <summary>
+        <span class="qa-num">Q62</span>
+        <span class="qa-question">裝充電樁要準備什麼？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>至少須提出施工申請表、施工計畫及材料規格等資料，充電設備亦須符合管理辦法所定的 CNS／VPC 等要求；詳細文件請依當期申請表逐項準備。</p>
+        <div class="qa-source">依據：電動車充電設備裝設辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 裝充電樁要繳哪些費用？ 依現行辦法，施工保證金為 10,000 元，管理基金為 1,000 元；EMS 設定費依設備品牌及辦法規定辦理。">
+      <summary>
+        <span class="qa-num">Q63</span>
+        <span class="qa-question">裝充電樁要繳哪些費用？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>依現行辦法，施工保證金為 10,000 元，管理基金為 1,000 元；EMS 設定費依設備品牌及辦法規定辦理。</p>
+        <div class="qa-source">依據：電動車充電設備裝設辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="充電樁" data-search="充電樁 充電樁的電費怎麼算？ 使用戶須負擔電表基本費及實際用電費用，並依社區充電系統及相關費率辦理；充電樁相關款項採專款專用方式管理。">
+      <summary>
+        <span class="qa-num">Q64</span>
+        <span class="qa-question">充電樁的電費怎麼算？</span>
+        <span class="qa-tag">充電樁</span>
+      </summary>
+      <div class="qa-answer">
+        <p>使用戶須負擔電表基本費及實際用電費用，並依社區充電系統及相關費率辦理；充電樁相關款項採專款專用方式管理。</p>
+        <div class="qa-source">依據：社區規約／電動車充電設備裝設辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="垃圾環境" data-search="垃圾環境 一般垃圾可以直接丟嗎？ 須依社區垃圾分類規定分類並妥善封袋，不應使用黑色或深色不透明垃圾袋，並應避免滲漏、異味及污染環境。">
+      <summary>
+        <span class="qa-num">Q65</span>
+        <span class="qa-question">一般垃圾可以直接丟嗎？</span>
+        <span class="qa-tag">垃圾環境</span>
+      </summary>
+      <div class="qa-answer">
+        <p>須依社區垃圾分類規定分類並妥善封袋，不應使用黑色或深色不透明垃圾袋，並應避免滲漏、異味及污染環境。</p>
+        <div class="qa-source">依據：環境清潔及垃圾分類管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="垃圾環境" data-search="垃圾環境 資源回收要分類嗎？ 要。請依社區資源回收分類項目分開投放，不得將一般垃圾混入回收物。">
+      <summary>
+        <span class="qa-num">Q66</span>
+        <span class="qa-question">資源回收要分類嗎？</span>
+        <span class="qa-tag">垃圾環境</span>
+      </summary>
+      <div class="qa-answer">
+        <p>要。請依社區資源回收分類項目分開投放，不得將一般垃圾混入回收物。</p>
+        <div class="qa-source">依據：環境清潔及垃圾分類管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="垃圾環境" data-search="垃圾環境 裝潢垃圾可以丟環保室嗎？ 不可以。裝潢產生的廢材、垃圾應由施工單位或住戶自行清運，不得當作一般社區垃圾處理。">
+      <summary>
+        <span class="qa-num">Q67</span>
+        <span class="qa-question">裝潢垃圾可以丟環保室嗎？</span>
+        <span class="qa-tag">垃圾環境</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。裝潢產生的廢材、垃圾應由施工單位或住戶自行清運，不得當作一般社區垃圾處理。</p>
+        <div class="qa-source">依據：環境清潔及垃圾分類管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="垃圾環境" data-search="垃圾環境 大型家具可以直接放環保室等清潔隊收嗎？ 不可以自行放置。大型廢棄物應先洽管理中心確認清運申請及處理方式，相關費用由住戶負擔。">
+      <summary>
+        <span class="qa-num">Q68</span>
+        <span class="qa-question">大型家具可以直接放環保室等清潔隊收嗎？</span>
+        <span class="qa-tag">垃圾環境</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以自行放置。大型廢棄物應先洽管理中心確認清運申請及處理方式，相關費用由住戶負擔。</p>
+        <div class="qa-source">依據：環境清潔及垃圾分類管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="垃圾環境" data-search="垃圾環境 廚餘可以連塑膠袋一起丟嗎？ 不可以。廚餘應先去除塑膠袋並瀝除液體，再依社區分類方式投入。">
+      <summary>
+        <span class="qa-num">Q69</span>
+        <span class="qa-question">廚餘可以連塑膠袋一起丟嗎？</span>
+        <span class="qa-tag">垃圾環境</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。廚餘應先去除塑膠袋並瀝除液體，再依社區分類方式投入。</p>
+        <div class="qa-source">依據：環境清潔及垃圾分類管理辦法</div>
+      </div>
+    </details>
+    <details class="qa-item searchable" data-category="垃圾環境" data-search="垃圾環境 貓砂、油脂或衛生用品可以沖馬桶或倒入排水孔嗎？ 不可以。貓砂、油脂、廚餘、衛生用品等不得倒入水槽、地排或馬桶，以免造成排水及污水系統堵塞。">
+      <summary>
+        <span class="qa-num">Q70</span>
+        <span class="qa-question">貓砂、油脂或衛生用品可以沖馬桶或倒入排水孔嗎？</span>
+        <span class="qa-tag">垃圾環境</span>
+      </summary>
+      <div class="qa-answer">
+        <p>不可以。貓砂、油脂、廚餘、衛生用品等不得倒入水槽、地排或馬桶，以免造成排水及污水系統堵塞。</p>
+        <div class="qa-source">依據：環境清潔及垃圾分類管理辦法</div>
+      </div>
+    </details>
+    </div>
+    <div id="qaNoResult" class="qa-no-result">找不到符合的問題，請換一個關鍵字，或洽管理中心確認。</div>
+    <div class="qa-footnote">本區依社區規約、現行管理辦法及管理中心現行作業整理；如文件修訂、個案條件不同或有疑義，仍以最新公告及管理中心確認結果為準。</div>
+  </section>
+
   <div id="empty" class="empty">找不到符合的內容。</div>
  </main>
 </div>
@@ -958,7 +1783,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRule()});
 </div>
 
 <script>
-const FACILITY_RULES = {"媽媽教室": ["開放時間：09:00–22:00。", "開放使用：20 點／人／小時；冷氣費 30 元／人／小時。", "每次最多使用 2 小時；同戶最多 4 人，總人數最多 8 人，不得跨戶共同使用。", "包場須於 3 日前申請，且預約日期須在 30 日內；300 元／小時，保證金 2,000 元，最多 4 小時、8 人。", "廚房設備不開放使用；訪客須由住戶陪同。", "可攜帶食物，但禁止明火、吸菸、嚼食檳榔；使用後須自行清潔。"], "健身房": ["開放時間：06:00–24:00。", "使用點數：20 點／人／小時；每次 1 小時，可延長至最多 2 小時。", "同戶最多 2 人，總人數最多 5 人。", "12 歲以下須由成人陪同，且不得使用健身器材；未滿 16 歲禁止重量訓練。", "不提供包場；訪客須由住戶陪同。", "僅可飲用白開水，不得攜帶食物或其他飲料；寵物不得進入。"], "空中酒吧": ["開放時間：09:00–22:00。", "採包場使用；須於 3 日前申請，且預約日期須在 30 日內。", "費用 300 元／小時，保證金 2,000 元；最多 4 小時、8 人。", "遲到超過 10 分鐘視同放棄預約；各預約時段間保留 30 分鐘供檢查。", "訪客須由住戶陪同。", "可攜帶食物；禁止吸菸、嚼食檳榔及危險易燃物品；使用後須自行清潔。"], "交誼廳": ["24 小時開放。", "屬公共開放空間，免費使用，不提供預約或包場。", "訪客須由住戶陪同。", "22:00 後請降低音量，避免影響其他住戶。", "不得長時間占用、作為私人會議場所或製造噪音。", "寵物須繫繩或不得落地。"]};
+const FACILITY_RULES = {"媽媽教室": ["開放時間：09:00–22:00。", "開放使用：20 點／人／小時；冷氣費 30 元／人／小時。", "每次最多使用 2 小時；同戶最多 4 人，總人數最多 8 人，不得跨戶共同使用。", "包場須於 3 日前申請，且預約日期須在 30 日內；300 元／小時，保證金 2,000 元，最多 4 小時、8 人。", "一般使用廚具設備不開放；包場使用可使用廚具設備；訪客須由住戶陪同。", "可攜帶食物，但禁止明火、吸菸、嚼食檳榔；使用後須自行清潔。"], "健身房": ["開放時間：06:00–24:00。", "使用點數：20 點／人／小時；每次 1 小時，可延長至最多 2 小時。", "同戶最多 2 人，總人數最多 5 人。", "12 歲以下須由成人陪同，且不得使用健身器材；未滿 16 歲禁止重量訓練。", "不提供包場；訪客須由住戶陪同。", "僅可飲用白開水，不得攜帶食物或其他飲料；寵物不得進入。"], "空中酒吧": ["開放時間：09:00–22:00。", "採包場使用；須於 3 日前申請，且預約日期須在 30 日內。", "費用 300 元／小時，保證金 2,000 元；最多 4 小時、8 人。", "遲到超過 10 分鐘視同放棄預約；各預約時段間保留 30 分鐘供檢查。", "訪客須由住戶陪同。", "可攜帶食物；禁止吸菸、嚼食檳榔及危險易燃物品；使用後須自行清潔。"], "交誼廳": ["24 小時開放。", "屬公共開放空間，免費使用，不提供預約或包場。", "訪客須由住戶陪同。", "22:00 後請降低音量，避免影響其他住戶。", "不得長時間占用、作為私人會議場所或製造噪音。", "寵物須繫繩或不得落地。"]};
 function openFacilityRule(name){
   const modal=document.getElementById('facilityRuleModal');
   document.getElementById('facilityRuleTitle').textContent=name+'｜使用辦法';
@@ -981,6 +1806,38 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js').catch(() => {});
   });
 }
+</script>
+
+
+<script>
+(function(){
+  const qaSearch=document.getElementById('qaSearch');
+  const chips=[...document.querySelectorAll('.qa-chip')];
+  const items=[...document.querySelectorAll('.qa-item')];
+  const noResult=document.getElementById('qaNoResult');
+  let activeCat='全部';
+
+  function filterQA(){
+    const q=(qaSearch?.value||'').trim().toLowerCase();
+    let visible=0;
+    items.forEach(item=>{
+      const cat=item.dataset.category||'';
+      const text=(item.dataset.search||'').toLowerCase();
+      const okCat=activeCat==='全部'||cat===activeCat;
+      const okText=!q||text.includes(q);
+      const ok=okCat&&okText;
+      item.style.display=ok?'':'none';
+      if(ok) visible++;
+    });
+    if(noResult) noResult.style.display=visible?'none':'block';
+  }
+  qaSearch?.addEventListener('input',filterQA);
+  chips.forEach(btn=>btn.addEventListener('click',()=>{
+    activeCat=btn.dataset.cat||'全部';
+    chips.forEach(x=>x.classList.toggle('active',x===btn));
+    filterQA();
+  }));
+})();
 </script>
 
 </body></html>

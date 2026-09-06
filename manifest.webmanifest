@@ -1,7 +1,7 @@
 {
   "name": "大毅一嶼｜社區服務知識庫",
   "short_name": "大毅一嶼",
-  "description": "大毅一嶼社區管理辦法、公設資訊與常用表格查詢。",
+  "description": "大毅一嶼社區管理辦法、公設資訊、表格下載與一嶼Q&A。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
