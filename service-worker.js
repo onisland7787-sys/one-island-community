@@ -1,4 +1,4 @@
-const CACHE_NAME = 'one-island-community-v40';
+const CACHE_NAME = 'one-island-community-v41';
 const ASSETS = [
   "./",
   "./index.html",
