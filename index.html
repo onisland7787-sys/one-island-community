@@ -2000,64 +2000,35 @@ if ('serviceWorker' in navigator) {
 
 
 
-<script id="v46-view-counter-script">
+
+
+
+<!-- GoatCounter：大毅一嶼社區服務知識庫 -->
+<script data-goatcounter="https://onisland7787-sys.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+<script id="v47-goatcounter-display">
 (function(){
-  var countEl = document.getElementById('pageViewCount');
-  if(!countEl) return;
-
-  var ns = 'onisland7787-sys.github.io';
-  var action = 'view';
-  var key = 'one-island-community';
-
-  function readLatestCount(){
-    var cbName = '__oneIslandCounterCb_' + Date.now();
-    window[cbName] = function(data){
+  var tries = 0;
+  var timer = setInterval(function(){
+    tries++;
+    if(window.goatcounter && typeof window.goatcounter.visit_count === 'function'){
+      clearInterval(timer);
+      var el = document.getElementById('pageViewCount');
+      if(!el) return;
+      el.textContent = '';
       try{
-        if(data && typeof data.value === 'number'){
-          countEl.textContent = Number(data.value).toLocaleString('zh-TW');
-        }else{
-          countEl.textContent = '—';
-        }
-      }finally{
-        try{ delete window[cbName]; }catch(e){}
-        if(script && script.parentNode) script.parentNode.removeChild(script);
+        window.goatcounter.visit_count({append:'#pageViewCount'});
+      }catch(e){
+        el.textContent = '—';
       }
-    };
-
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://counterapi.com/api/' +
-      encodeURIComponent(ns) + '/' +
-      encodeURIComponent(action) + '/' +
-      encodeURIComponent(key) +
-      '?readOnly=true&callback=' + encodeURIComponent(cbName) +
-      '&_=' + Date.now();
-    script.onerror = function(){
-      countEl.textContent = '—';
-      try{ delete window[cbName]; }catch(e){}
-    };
-    document.head.appendChild(script);
-  }
-
-  // Official CounterAPI invisible pixel: each actual page load sends one view event.
-  // Cache-buster guarantees a fresh request instead of a browser-cached image.
-  var pixel = new Image(1,1);
-  var done = false;
-  function afterTrack(){
-    if(done) return;
-    done = true;
-    setTimeout(readLatestCount, 350);
-  }
-  pixel.onload = afterTrack;
-  pixel.onerror = afterTrack;
-  pixel.src = 'https://counterapi.com/pixel.gif?ns=' +
-    encodeURIComponent(ns) +
-    '&action=' + encodeURIComponent(action) +
-    '&key=' + encodeURIComponent(key) +
-    '&_=' + Date.now() + '-' + Math.random().toString(36).slice(2);
-
-  // Fallback in case the browser does not fire image callbacks quickly.
-  setTimeout(afterTrack, 1800);
+      return;
+    }
+    if(tries > 100){
+      clearInterval(timer);
+      var el2 = document.getElementById('pageViewCount');
+      if(el2) el2.textContent = '—';
+    }
+  }, 100);
 })();
 </script>
 
