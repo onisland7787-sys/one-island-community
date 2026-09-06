@@ -1922,7 +1922,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRule()});
 
 <div class="page-view-counter" title="社區服務知識庫累積瀏覽次數">
   <span>累積瀏覽</span>
-  <strong class="counterapi" ns="onisland7787-sys.github.io" action="view" key="one-island-community" noCss="true" noIcon="true" noLink="true">—</strong>
+  <strong id="pageViewCount">—</strong>
   <span>次</span>
 </div>
 
@@ -1997,6 +1997,68 @@ if ('serviceWorker' in navigator) {
 
 
 
-<script src="https://counterapi.com/c.js?ns=onisland7787-sys.github.io" async></script>
+
+
+
+<script id="v46-view-counter-script">
+(function(){
+  var countEl = document.getElementById('pageViewCount');
+  if(!countEl) return;
+
+  var ns = 'onisland7787-sys.github.io';
+  var action = 'view';
+  var key = 'one-island-community';
+
+  function readLatestCount(){
+    var cbName = '__oneIslandCounterCb_' + Date.now();
+    window[cbName] = function(data){
+      try{
+        if(data && typeof data.value === 'number'){
+          countEl.textContent = Number(data.value).toLocaleString('zh-TW');
+        }else{
+          countEl.textContent = '—';
+        }
+      }finally{
+        try{ delete window[cbName]; }catch(e){}
+        if(script && script.parentNode) script.parentNode.removeChild(script);
+      }
+    };
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://counterapi.com/api/' +
+      encodeURIComponent(ns) + '/' +
+      encodeURIComponent(action) + '/' +
+      encodeURIComponent(key) +
+      '?readOnly=true&callback=' + encodeURIComponent(cbName) +
+      '&_=' + Date.now();
+    script.onerror = function(){
+      countEl.textContent = '—';
+      try{ delete window[cbName]; }catch(e){}
+    };
+    document.head.appendChild(script);
+  }
+
+  // Official CounterAPI invisible pixel: each actual page load sends one view event.
+  // Cache-buster guarantees a fresh request instead of a browser-cached image.
+  var pixel = new Image(1,1);
+  var done = false;
+  function afterTrack(){
+    if(done) return;
+    done = true;
+    setTimeout(readLatestCount, 350);
+  }
+  pixel.onload = afterTrack;
+  pixel.onerror = afterTrack;
+  pixel.src = 'https://counterapi.com/pixel.gif?ns=' +
+    encodeURIComponent(ns) +
+    '&action=' + encodeURIComponent(action) +
+    '&key=' + encodeURIComponent(key) +
+    '&_=' + Date.now() + '-' + Math.random().toString(36).slice(2);
+
+  // Fallback in case the browser does not fire image callbacks quickly.
+  setTimeout(afterTrack, 1800);
+})();
+</script>
 
 </body></html>
