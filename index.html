@@ -1922,7 +1922,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRule()});
 
 <div class="page-view-counter" title="社區服務知識庫累積瀏覽次數">
   <span>累積瀏覽</span>
-  <strong id="pageViewCount">—</strong>
+  <strong class="counterapi" ns="onisland7787-sys.github.io" action="view" key="one-island-community" noCss="true" noIcon="true" noLink="true">—</strong>
   <span>次</span>
 </div>
 
@@ -1994,31 +1994,9 @@ if ('serviceWorker' in navigator) {
 </script>
 
 
-<script id="v44-view-counter-script">
-(function(){
-  const el = document.getElementById('pageViewCount');
-  if(!el) return;
 
-  const endpoint = 'https://counterapi.com/api/onisland7787-sys.github.io/view/one-island-community';
-  const isLive = location.hostname === 'onisland7787-sys.github.io';
-  const url = endpoint + (isLive ? '' : '?readOnly=true');
 
-  fetch(url, {cache:'no-store'})
-    .then(function(r){
-      if(!r.ok) throw new Error('counter unavailable');
-      return r.json();
-    })
-    .then(function(data){
-      if(typeof data.value === 'number'){
-        el.textContent = data.value.toLocaleString('zh-TW');
-      }else{
-        el.textContent = '—';
-      }
-    })
-    .catch(function(){
-      el.textContent = '—';
-    });
-})();
-</script>
+
+<script src="https://counterapi.com/c.js?ns=onisland7787-sys.github.io" async></script>
 
 </body></html>
