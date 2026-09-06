@@ -2011,19 +2011,22 @@ if ('serviceWorker' in navigator) {
 
 
 
-<script id="v48-clean-counter">
+
+
+
+<script id="v49-goatcounter-total">
 (function(){
   var el = document.getElementById('pageViewCount');
   if(!el) return;
 
-  function loadCount(){
+  function loadTotal(){
     var xhr = new XMLHttpRequest();
     xhr.addEventListener('load', function(){
       if(this.status >= 200 && this.status < 300){
         try{
           var data = JSON.parse(this.responseText);
           if(data && data.count != null){
-            el.textContent = data.count;
+            el.textContent = Number(data.count).toLocaleString('zh-TW');
             return;
           }
         }catch(e){}
@@ -2032,15 +2035,12 @@ if ('serviceWorker' in navigator) {
     });
     xhr.addEventListener('error', function(){ el.textContent = '—'; });
     xhr.open('GET',
-      'https://onisland7787-sys.goatcounter.com/counter/' +
-      encodeURIComponent('/one-island-community/') +
-      '.json?_=' + Date.now()
+      'https://onisland7787-sys.goatcounter.com/counter/TOTAL.json?_=' + Date.now(),
+      true
     );
     xhr.send();
   }
-
-  // Give GoatCounter a moment to submit the current visit, then read the public JSON counter.
-  setTimeout(loadCount, 1200);
+  setTimeout(loadTotal, 1200);
 })();
 </script>
 
