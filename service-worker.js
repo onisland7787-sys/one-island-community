@@ -1,9 +1,5 @@
-// V46 cache-reset service worker
-// Purpose: clear old cached versions and let all requests go directly to the network.
-self.addEventListener('install', () => {
-  self.skipWaiting();
-});
-
+// 大毅一嶼｜社區服務知識庫 V50
+self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
